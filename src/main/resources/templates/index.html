@@ -38,7 +38,13 @@
             </article>
         </div>
     </section>
+    <section class="location-panel" aria-labelledby="location-title">
+        <div><p class="eyebrow">Cerca de ti</p><h2 id="location-title">Conoce tu ubicación</h2></div>
+        <button type="button" data-location-button>Usar mi ubicación</button>
+        <p data-location-status aria-live="polite">Tus coordenadas no se guardan ni se envían.</p>
+    </section>
 </main>
 <script src="/js/pwa-register.js" defer></script>
+<script src="/js/geolocation.js" defer></script>
 </body>
 </html>
