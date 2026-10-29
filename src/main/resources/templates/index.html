@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#28664a">
     <title>LocalShop</title>
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 <header class="navbar">
     <a class="brand" href="/">LocalShop</a>
-    <span>Compra local, crece en comunidad</span>
+    <span class="connection-status" data-connection-status aria-live="polite">Comprobando conexión…</span>
 </header>
 <main class="container">
     <section class="hero">
@@ -37,5 +39,6 @@
         </div>
     </section>
 </main>
+<script src="/js/pwa-register.js" defer></script>
 </body>
 </html>
