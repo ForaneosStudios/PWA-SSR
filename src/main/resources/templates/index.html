@@ -6,12 +6,34 @@
     <title>LocalShop</title>
 </head>
 <body>
-<header><h1>LocalShop</h1></header>
-<main>
-    <h2>Productos de nuestra comunidad</h2>
-    <ul>
-        <li th:each="producto : ${productos}" th:text="${producto.nombre}">Producto</li>
-    </ul>
+<header class="navbar">
+    <a class="brand" href="/">LocalShop</a>
+    <span>Compra local, crece en comunidad</span>
+</header>
+<main class="container">
+    <section class="hero">
+        <p class="eyebrow">Hecho cerca de ti</p>
+        <h1>Productos de nuestra comunidad</h1>
+        <p>Descubre alimentos y artesanías de productores locales.</p>
+    </section>
+    <section class="catalog" aria-labelledby="catalog-title">
+        <h2 id="catalog-title">Catálogo</h2>
+        <div class="product-grid">
+            <article class="product-card" th:each="producto : ${productos}">
+                <div class="product-image">
+                    <img th:if="${producto.imagenUrl != null and !producto.imagenUrl.isBlank()}"
+                         th:src="${producto.imagenUrl}" th:alt="${producto.nombre}">
+                    <span th:unless="${producto.imagenUrl != null and !producto.imagenUrl.isBlank()}"
+                          aria-hidden="true">LS</span>
+                </div>
+                <div class="product-content">
+                    <h3 th:text="${producto.nombre}">Producto</h3>
+                    <p th:text="${producto.descripcion}">Descripción</p>
+                    <strong th:text="${'$' + #numbers.formatDecimal(producto.precio, 1, 2)}">$0.00</strong>
+                </div>
+            </article>
+        </div>
+    </section>
 </main>
 </body>
 </html>
