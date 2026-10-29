@@ -9,8 +9,8 @@
 - [x] Página de respaldo offline capturada en navegador.
 - [x] Consola H2 capturada en navegador.
 - [x] Suite Maven automatizada.
-- [x] Instalación PWA confirmada manualmente desde la interfaz de Chrome.
-- [x] Offline confirmado manualmente desde DevTools tras activación del SW.
-- [x] Geolocalización confirmada manualmente aceptando y negando permiso.
+- [ ] Instalación PWA confirmada manualmente desde la interfaz de Chrome.
+- [ ] Offline confirmado manualmente desde DevTools tras activación del SW.
+- [ ] Geolocalización confirmada manualmente aceptando y negando permiso.
 
-Todas las validaciones manuales cuentan con capturas dentro de esta carpeta.
+Las tres validaciones pendientes necesitan interacción humana con los permisos y DevTools; no se marcan como aprobadas automáticamente.
