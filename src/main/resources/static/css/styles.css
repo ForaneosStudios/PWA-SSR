@@ -16,6 +16,8 @@ body { margin: 0; min-height: 100vh; }
 .navbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem clamp(1rem, 5vw, 5rem); color: white; background: var(--green); }
 .brand { color: inherit; font-size: 1.35rem; font-weight: 800; text-decoration: none; }
 .navbar span { font-size: .9rem; opacity: .9; }
+.connection-status::before { content: ""; display: inline-block; width: .55rem; height: .55rem; margin-right: .4rem; border-radius: 50%; background: #bce784; }
+.connection-status[data-online="false"]::before { background: #f5b7a7; }
 .container { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; padding-bottom: 4rem; }
 .hero { padding: clamp(3rem, 8vw, 7rem) 0 2rem; max-width: 720px; }
 .hero h1 { margin: .25rem 0 1rem; font-size: clamp(2.4rem, 7vw, 5rem); line-height: .98; letter-spacing: -.05em; }
