@@ -36,4 +36,14 @@ class PwaAssetsTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("image/png"));
     }
+
+    @Test
+    void servesOfflineResources() throws Exception {
+        mvc.perform(get("/sw.js"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("fetch(request)")));
+        mvc.perform(get("/offline.html"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Volveremos a encontrarnos")));
+    }
 }
