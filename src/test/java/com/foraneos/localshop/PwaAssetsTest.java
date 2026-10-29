@@ -46,4 +46,12 @@ class PwaAssetsTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("Volveremos a encontrarnos")));
     }
+
+    @Test
+    void servesGeolocationScript() throws Exception {
+        mvc.perform(get("/js/geolocation.js"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("getCurrentPosition")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("PERMISSION_DENIED")));
+    }
 }
