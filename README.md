@@ -50,6 +50,12 @@ La página se renderiza en el servidor. Sin red, el navegador muestra el último
 - [Flujo offline](docs/pruebas-offline.md)
 - [Geolocalización](docs/pruebas-geolocalizacion.md)
 
+### Evidencias reales
+
+![Catálogo LocalShop en escritorio](docs/evidencias/catalogo-desktop.png)
+
+![Catálogo LocalShop en vista móvil](docs/evidencias/catalogo-movil.png)
+
 Para probar offline: visitar la página, recargar tras activar el Service Worker, seleccionar Offline en DevTools y volver a cargar. La geolocalización funciona en `localhost` o HTTPS y nunca se persiste ni se envía al servidor.
 
 ## Desarrollo por fases
