@@ -52,15 +52,25 @@ La página se renderiza en el servidor. Sin red, el navegador muestra el último
 
 ### Evidencias reales
 
+La vista de escritorio comprueba que el catálogo SSR presenta los seis productos, sus precios y la acción de ubicación con una distribución adecuada para pantallas amplias.
+
 ![Catálogo LocalShop en escritorio](docs/evidencias/catalogo-desktop.png)
+
+La vista móvil demuestra que el diseño es responsive: las tarjetas y controles se reorganizan sin provocar desplazamiento horizontal ni pérdida de contenido.
 
 ![Catálogo LocalShop en vista móvil](docs/evidencias/catalogo-movil.png)
 
 #### Manifest y recursos PWA
 
+El navegador recibe correctamente `manifest.json` con el nombre, colores, modo de visualización e iconos requeridos para identificar LocalShop como PWA.
+
 ![Manifest servido por LocalShop](docs/evidencias/manifest.png)
 
+La ruta de respaldo ofrece una interfaz comprensible cuando no existe una respuesta de red ni una versión previa del catálogo en caché.
+
 ![Página de respaldo sin conexión](docs/evidencias/pagina-offline.png)
+
+La consola de H2 confirma que la base de datos embebida está disponible durante el desarrollo para consultar la persistencia de los productos.
 
 ![Consola H2 disponible](docs/evidencias/consola-h2.png)
 
@@ -68,13 +78,19 @@ La página se renderiza en el servidor. Sin red, el navegador muestra el último
 
 **Service Worker activo y controlando la página**
 
+El panel Application de Chrome muestra que `sw.js` fue registrado, activado y se encuentra ejecutándose. Esto permite interceptar solicitudes y aplicar las estrategias de caché de la aplicación.
+
 ![Service Worker activo y en ejecución](docs/evidencias/service-worker-activo.png)
 
 **Catálogo funcionando con Network > Offline**
 
+Con la red deshabilitada desde DevTools, LocalShop continúa mostrando una experiencia navegable utilizando los recursos almacenados por el Service Worker.
+
 ![Catálogo disponible sin conexión](docs/evidencias/catalogo-offline.png)
 
 **Manifest reconocido e instalación disponible**
+
+Chrome reconoce los metadatos y recursos necesarios para ofrecer la instalación. Las siguientes capturas muestran tanto la aplicación detectada como el diálogo de confirmación de instalación.
 
 ![LocalShop reconocido como aplicación instalable](docs/evidencias/instalacion-pwa-1.png)
 
@@ -82,9 +98,13 @@ La página se renderiza en el servidor. Sin red, el navegador muestra el último
 
 **Geolocalización permitida mostrando coordenadas**
 
+Al conceder el permiso, la aplicación obtiene y presenta la ubicación únicamente después de la acción del usuario, sin enviarla ni guardarla en el servidor.
+
 ![Geolocalización permitida](docs/evidencias/geolocalizacion-permitida.png)
 
 **Geolocalización denegada con mensaje controlado**
+
+Al bloquear el permiso, la interfaz informa la situación de forma controlada y el resto del catálogo permanece funcional.
 
 ![Geolocalización denegada](docs/evidencias/geolocalizacion-denegada.png)
 
