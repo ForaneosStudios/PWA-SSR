@@ -52,46 +52,61 @@ La página se renderiza en el servidor. Sin red, el navegador muestra el último
 
 ### Evidencias reales
 
+La vista de escritorio comprueba que el catálogo SSR presenta los seis productos, sus precios y la acción de ubicación con una distribución adecuada para pantallas amplias.
+
 ![Catálogo LocalShop en escritorio](docs/evidencias/catalogo-desktop.png)
+
+La vista móvil demuestra que el diseño es responsive: las tarjetas y controles se reorganizan sin provocar desplazamiento horizontal ni pérdida de contenido.
 
 ![Catálogo LocalShop en vista móvil](docs/evidencias/catalogo-movil.png)
 
 #### Manifest y recursos PWA
 
+El navegador recibe correctamente `manifest.json` con el nombre, colores, modo de visualización e iconos requeridos para identificar LocalShop como PWA.
+
 ![Manifest servido por LocalShop](docs/evidencias/manifest.png)
+
+La ruta de respaldo ofrece una interfaz comprensible cuando no existe una respuesta de red ni una versión previa del catálogo en caché.
 
 ![Página de respaldo sin conexión](docs/evidencias/pagina-offline.png)
 
+La consola de H2 confirma que la base de datos embebida está disponible durante el desarrollo para consultar la persistencia de los productos.
+
 ![Consola H2 disponible](docs/evidencias/consola-h2.png)
 
-#### Evidencias manuales pendientes
+#### Validaciones manuales en Chrome
 
-Estas capturas deben realizarse en Chrome porque requieren DevTools o decisiones de permisos. Guarda los archivos con los nombres indicados dentro de `docs/evidencias/`; al hacerlo aparecerán directamente en estos espacios.
+**Service Worker activo y controlando la página**
 
-**Service Worker activo y controlando la página**  
-Archivo esperado: `docs/evidencias/service-worker-activo.png`
+El panel Application de Chrome muestra que `sw.js` fue registrado, activado y se encuentra ejecutándose. Esto permite interceptar solicitudes y aplicar las estrategias de caché de la aplicación.
 
-<!-- Sustituir este comentario por: ![Service Worker activo](docs/evidencias/service-worker-activo.png) -->
+![Service Worker activo y en ejecución](docs/evidencias/service-worker-activo.png)
 
-**Catálogo funcionando con Network > Offline**  
-Archivo esperado: `docs/evidencias/catalogo-offline.png`
+**Catálogo funcionando con Network > Offline**
 
-<!-- Sustituir este comentario por: ![Catálogo offline](docs/evidencias/catalogo-offline.png) -->
+Con la red deshabilitada desde DevTools, LocalShop continúa mostrando una experiencia navegable utilizando los recursos almacenados por el Service Worker.
 
-**Manifest reconocido e instalación disponible**  
-Archivo esperado: `docs/evidencias/instalacion-pwa.png`
+![Catálogo disponible sin conexión](docs/evidencias/catalogo-offline.png)
 
-<!-- Sustituir este comentario por: ![Instalación PWA](docs/evidencias/instalacion-pwa.png) -->
+**Manifest reconocido e instalación disponible**
 
-**Geolocalización permitida mostrando coordenadas**  
-Archivo esperado: `docs/evidencias/geolocalizacion-permitida.png`
+Chrome reconoce los metadatos y recursos necesarios para ofrecer la instalación. Las siguientes capturas muestran tanto la aplicación detectada como el diálogo de confirmación de instalación.
 
-<!-- Sustituir este comentario por: ![Geolocalización permitida](docs/evidencias/geolocalizacion-permitida.png) -->
+![LocalShop reconocido como aplicación instalable](docs/evidencias/instalacion-pwa-1.png)
 
-**Geolocalización denegada con mensaje controlado**  
-Archivo esperado: `docs/evidencias/geolocalizacion-denegada.png`
+![Diálogo de instalación de LocalShop](docs/evidencias/instalacion-pwa-2.png)
 
-<!-- Sustituir este comentario por: ![Geolocalización denegada](docs/evidencias/geolocalizacion-denegada.png) -->
+**Geolocalización permitida mostrando coordenadas**
+
+Al conceder el permiso, la aplicación obtiene y presenta la ubicación únicamente después de la acción del usuario, sin enviarla ni guardarla en el servidor.
+
+![Geolocalización permitida](docs/evidencias/geolocalizacion-permitida.png)
+
+**Geolocalización denegada con mensaje controlado**
+
+Al bloquear el permiso, la interfaz informa la situación de forma controlada y el resto del catálogo permanece funcional.
+
+![Geolocalización denegada](docs/evidencias/geolocalizacion-denegada.png)
 
 Para probar offline: visitar la página, recargar tras activar el Service Worker, seleccionar Offline en DevTools y volver a cargar. La geolocalización funciona en `localhost` o HTTPS y nunca se persiste ni se envía al servidor.
 
@@ -117,6 +132,6 @@ Las ramas se integran en `develop` mediante merge commit; la entrega se promueve
 
 ## Limitaciones
 
-- Permisos, instalación y modo offline requieren validación en navegador real.
+- La instalación, los permisos y el modo offline dependen de las capacidades y configuración del navegador.
 - Offline presenta el HTML SSR cacheado; no ofrece operaciones de base de datos desconectadas.
 - No incluye autenticación, carrito, pagos ni API REST.
