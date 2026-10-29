@@ -56,6 +56,43 @@ La página se renderiza en el servidor. Sin red, el navegador muestra el último
 
 ![Catálogo LocalShop en vista móvil](docs/evidencias/catalogo-movil.png)
 
+#### Manifest y recursos PWA
+
+![Manifest servido por LocalShop](docs/evidencias/manifest.png)
+
+![Página de respaldo sin conexión](docs/evidencias/pagina-offline.png)
+
+![Consola H2 disponible](docs/evidencias/consola-h2.png)
+
+#### Evidencias manuales pendientes
+
+Estas capturas deben realizarse en Chrome porque requieren DevTools o decisiones de permisos. Guarda los archivos con los nombres indicados dentro de `docs/evidencias/`; al hacerlo aparecerán directamente en estos espacios.
+
+**Service Worker activo y controlando la página**  
+Archivo esperado: `docs/evidencias/service-worker-activo.png`
+
+<!-- Sustituir este comentario por: ![Service Worker activo](docs/evidencias/service-worker-activo.png) -->
+
+**Catálogo funcionando con Network > Offline**  
+Archivo esperado: `docs/evidencias/catalogo-offline.png`
+
+<!-- Sustituir este comentario por: ![Catálogo offline](docs/evidencias/catalogo-offline.png) -->
+
+**Manifest reconocido e instalación disponible**  
+Archivo esperado: `docs/evidencias/instalacion-pwa.png`
+
+<!-- Sustituir este comentario por: ![Instalación PWA](docs/evidencias/instalacion-pwa.png) -->
+
+**Geolocalización permitida mostrando coordenadas**  
+Archivo esperado: `docs/evidencias/geolocalizacion-permitida.png`
+
+<!-- Sustituir este comentario por: ![Geolocalización permitida](docs/evidencias/geolocalizacion-permitida.png) -->
+
+**Geolocalización denegada con mensaje controlado**  
+Archivo esperado: `docs/evidencias/geolocalizacion-denegada.png`
+
+<!-- Sustituir este comentario por: ![Geolocalización denegada](docs/evidencias/geolocalizacion-denegada.png) -->
+
 Para probar offline: visitar la página, recargar tras activar el Service Worker, seleccionar Offline en DevTools y volver a cargar. La geolocalización funciona en `localhost` o HTTPS y nunca se persiste ni se envía al servidor.
 
 ## Desarrollo por fases
@@ -67,6 +104,14 @@ Para probar offline: visitar la página, recargar tras activar el Service Worker
 | App Shell | [Kilver15](https://github.com/Kilver15) | Manifest, iconos y registro PWA |
 | Offline | [Emmanuel-Rochin](https://github.com/Emmanuel-Rochin) | Service Worker y caché |
 | Integración | [JessErfi](https://github.com/JessErfi) | Geolocalización, QA, CI y documentación |
+
+### Autores
+
+- Jesús Aceves — [aceves08](https://github.com/aceves08)
+- Judith — [JudithHP](https://github.com/JudithHP)
+- Iván — [Kilver15](https://github.com/Kilver15)
+- Emmanuel Rochín — [Emmanuel-Rochin](https://github.com/Emmanuel-Rochin)
+- Ernesto Fierro — [JessErfi](https://github.com/JessErfi)
 
 Las ramas se integran en `develop` mediante merge commit; la entrega se promueve de `develop` a `main`.
 
