@@ -13,3 +13,18 @@ self.addEventListener('install', event => {
     event.waitUntil(caches.open(CACHE_VERSION).then(cache => cache.addAll(APP_SHELL)));
     self.skipWaiting();
 });
+
+self.addEventListener('fetch', event => {
+    const request = event.request;
+    if (request.mode !== 'navigate') return;
+
+    event.respondWith(
+        fetch(request)
+            .then(response => {
+                const copy = response.clone();
+                caches.open(CACHE_VERSION).then(cache => cache.put(request, copy));
+                return response;
+            })
+            .catch(async () => (await caches.match(request)) || caches.match('/') || caches.match('/offline.html'))
+    );
+});
