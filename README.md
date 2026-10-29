@@ -122,11 +122,11 @@ Para probar offline: visitar la página, recargar tras activar el Service Worker
 
 ### Autores
 
-- Jesús Aceves — [aceves08](https://github.com/aceves08)
-- Judith — [JudithHP](https://github.com/JudithHP)
-- Iván — [Kilver15](https://github.com/Kilver15)
-- Emmanuel Rochín — [Emmanuel-Rochin](https://github.com/Emmanuel-Rochin)
-- Ernesto Fierro — [JessErfi](https://github.com/JessErfi)
+- Jesús Eduardo Aceves Aguirre — [aceves08](https://github.com/aceves08)
+- Judith Estefanía Hernández Pérez— [JudithHP](https://github.com/JudithHP)
+- José Iván Solorio Serna — [Kilver15](https://github.com/Kilver15)
+- Emmanuel Ulises Rochín Vargas — [Emmanuel-Rochin](https://github.com/Emmanuel-Rochin)
+- Jesús Ernesto Fierro Sandoval — [JessErfi](https://github.com/JessErfi)
 
 Las ramas se integran en `develop` mediante merge commit; la entrega se promueve de `develop` a `main`.
 
