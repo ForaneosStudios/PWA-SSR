@@ -64,34 +64,29 @@ La página se renderiza en el servidor. Sin red, el navegador muestra el último
 
 ![Consola H2 disponible](docs/evidencias/consola-h2.png)
 
-#### Evidencias manuales pendientes
+#### Validaciones manuales en Chrome
 
-Estas capturas deben realizarse en Chrome porque requieren DevTools o decisiones de permisos. Guarda los archivos con los nombres indicados dentro de `docs/evidencias/`; al hacerlo aparecerán directamente en estos espacios.
+**Service Worker activo y controlando la página**
 
-**Service Worker activo y controlando la página**  
-Archivo esperado: `docs/evidencias/service-worker-activo.png`
+![Service Worker activo y en ejecución](docs/evidencias/service-worker-activo.png)
 
-<!-- Sustituir este comentario por: ![Service Worker activo](docs/evidencias/service-worker-activo.png) -->
+**Catálogo funcionando con Network > Offline**
 
-**Catálogo funcionando con Network > Offline**  
-Archivo esperado: `docs/evidencias/catalogo-offline.png`
+![Catálogo disponible sin conexión](docs/evidencias/catalogo-offline.png)
 
-<!-- Sustituir este comentario por: ![Catálogo offline](docs/evidencias/catalogo-offline.png) -->
+**Manifest reconocido e instalación disponible**
 
-**Manifest reconocido e instalación disponible**  
-Archivo esperado: `docs/evidencias/instalacion-pwa.png`
+![LocalShop reconocido como aplicación instalable](docs/evidencias/instalacion-pwa-1.png)
 
-<!-- Sustituir este comentario por: ![Instalación PWA](docs/evidencias/instalacion-pwa.png) -->
+![Diálogo de instalación de LocalShop](docs/evidencias/instalacion-pwa-2.png)
 
-**Geolocalización permitida mostrando coordenadas**  
-Archivo esperado: `docs/evidencias/geolocalizacion-permitida.png`
+**Geolocalización permitida mostrando coordenadas**
 
-<!-- Sustituir este comentario por: ![Geolocalización permitida](docs/evidencias/geolocalizacion-permitida.png) -->
+![Geolocalización permitida](docs/evidencias/geolocalizacion-permitida.png)
 
-**Geolocalización denegada con mensaje controlado**  
-Archivo esperado: `docs/evidencias/geolocalizacion-denegada.png`
+**Geolocalización denegada con mensaje controlado**
 
-<!-- Sustituir este comentario por: ![Geolocalización denegada](docs/evidencias/geolocalizacion-denegada.png) -->
+![Geolocalización denegada](docs/evidencias/geolocalizacion-denegada.png)
 
 Para probar offline: visitar la página, recargar tras activar el Service Worker, seleccionar Offline en DevTools y volver a cargar. La geolocalización funciona en `localhost` o HTTPS y nunca se persiste ni se envía al servidor.
 
@@ -117,6 +112,6 @@ Las ramas se integran en `develop` mediante merge commit; la entrega se promueve
 
 ## Limitaciones
 
-- Permisos, instalación y modo offline requieren validación en navegador real.
+- La instalación, los permisos y el modo offline dependen de las capacidades y configuración del navegador.
 - Offline presenta el HTML SSR cacheado; no ofrece operaciones de base de datos desconectadas.
 - No incluye autenticación, carrito, pagos ni API REST.
