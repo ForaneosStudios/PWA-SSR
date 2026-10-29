@@ -9,7 +9,7 @@ locationButton?.addEventListener('click', () => {
     locationStatus.textContent = 'Solicitando tu ubicación…';
     navigator.geolocation.getCurrentPosition(position => {
         const { latitude, longitude } = position.coords;
-        locationStatus.textContent = `Ubicación: ${latitude}, ${longitude}`;
+        locationStatus.textContent = `Latitud ${latitude.toFixed(5)} · Longitud ${longitude.toFixed(5)}`;
     }, error => {
         const messages = {
             [error.PERMISSION_DENIED]: 'Permiso denegado. Puedes habilitarlo desde la configuración del navegador.',
