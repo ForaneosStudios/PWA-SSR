@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LocalShop</title>
+</head>
+<body>
+<header><h1>LocalShop</h1></header>
+<main>
+    <h2>Productos de nuestra comunidad</h2>
+    <ul>
+        <li th:each="producto : ${productos}" th:text="${producto.nombre}">Producto</li>
+    </ul>
+</main>
+</body>
+</html>
